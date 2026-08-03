@@ -1,7 +1,7 @@
-<ul>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
   @for (circuit of circuits; track circuit.id) {
   <app-circuit-card [circuit]="circuit" />
   } @empty {
-  <li>No hay circuitos.</li>
+  <p>No hay circuitos.</p>
   }
-</ul>
+</div>
