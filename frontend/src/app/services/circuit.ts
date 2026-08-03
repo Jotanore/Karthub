@@ -6,7 +6,7 @@ import { Circuit } from '../models/circuit.model';
 })
 export class CircuitService {
 
-  private circuits: Circuit[] = [
+  private readonly circuits: Circuit[] = [
     {
       id: 1,
       name: 'Circuit de Monaco',
