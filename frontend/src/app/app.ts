@@ -1,9 +1,11 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+//importar el ts del header para poder usarlo y añadirlo a imports
+import { Header } from './components/header/header'
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [Header, RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
