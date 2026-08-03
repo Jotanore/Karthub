@@ -6,4 +6,4 @@ import { Component } from '@angular/core';
   templateUrl: './racing-line-editor-page.html',
   styleUrl: './racing-line-editor-page.css',
 })
-export class RacingLineEditorPage {}
+export class RacingLineEditorPageComponent { }
