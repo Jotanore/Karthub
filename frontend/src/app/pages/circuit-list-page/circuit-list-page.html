@@ -1,1 +1,7 @@
-<p>circuit-list-page works!</p>
+<ul>
+  @for (circuit of circuits; track circuit.id) {
+  <app-circuit-card [circuit]="circuit" />
+  } @empty {
+  <li>No hay circuitos.</li>
+  }
+</ul>
