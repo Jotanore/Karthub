@@ -1,1 +1,9 @@
-<div>{{ circuit().name }}</div>
+<article class="flex flex-col py-3 h-full w-full border-4 border-gray-500 rounded-3xl overflow-hidden">
+  <img [src]="circuit().imageUrl" alt="Trazado de {{ circuit().name }}" class="w-full h-32 object-contain" />
+  <div class="flex flex-col p-4">
+    <h2 class="text-xl font-bold text-gray-900 mb-2">{{ circuit().name }}</h2>
+    <p>{{ circuit().location }}</p>
+    <p>{{ circuit().length }} km</p>
+    <p class="flex-1 line-clamp-3 text-gray-600 text-sm leading-relaxed">{{ circuit().description }}</p>
+  </div>
+</article>
