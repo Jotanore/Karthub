@@ -1,0 +1,14 @@
+<div class="flex flex-row gap-2 border-2 p-3" role="toolbar" aria-label="Herramientas de edición">
+  <button class="p-2 border-2 border-amber-400" [class.bg-amber-400]="activeTool() === 'SELECT'"
+    (click)="selectTool('SELECT')" type="button" [attr.aria-pressed]="activeTool() === 'SELECT'">
+    Seleccionar
+  </button>
+  <button class="p-2 border-2 border-amber-400" [class.bg-amber-400]="activeTool() === 'ADD_POINT'"
+    (click)="selectTool('ADD_POINT')" type="button" [attr.aria-pressed]="activeTool() === 'ADD_POINT'">
+    Añadir punto
+  </button>
+  <button class="p-2 border-2 border-amber-400" [class.bg-amber-400]="activeTool() === 'DELETE_POINT'"
+    (click)="selectTool('DELETE_POINT')" type="button" [attr.aria-pressed]="activeTool() === 'DELETE_POINT'">
+    Borrar punto
+  </button>
+</div>
