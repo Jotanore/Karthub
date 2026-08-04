@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { CircuitLayout } from './circuit-layout';
+import { CircuitLayoutService } from './circuit-layout';
 
-describe('CircuitLayout', () => {
-  let service: CircuitLayout;
+describe('CircuitLayoutService', () => {
+  let service: CircuitLayoutService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(CircuitLayout);
+    service = TestBed.inject(CircuitLayoutService);
   });
 
   it('should be created', () => {

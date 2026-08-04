@@ -1,1 +1,9 @@
-<app-editor-toolbar [activeTool]="selectedTool()" (toolSelected)="toolUpdate($event)" />
+<div>
+  @if (layout(); as currentLayout) {
+    <app-editor-toolbar [activeTool]="selectedTool()" (toolSelected)="toolUpdate($event)" />
+    <p>Layout: {{ currentLayout.name }}</p>
+
+  } @else {
+    <p>Layout not found</p>
+  }
+</div>
