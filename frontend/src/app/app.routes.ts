@@ -30,6 +30,11 @@ export const routes: Routes = [
   },
   {
     path: 'editor',
+    redirectTo: 'editor/monaco-main',
+    pathMatch: 'full',
+  },
+  {
+    path: 'editor/:layoutId',
     loadComponent: () =>
       import('./pages/racing-line-editor-page/racing-line-editor-page').then(
         (module) => module.RacingLineEditorPageComponent,
