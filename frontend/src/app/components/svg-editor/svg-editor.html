@@ -1,4 +1,4 @@
-<svg [attr.viewBox]="layout().viewBox" preserveAspectRatio="xMidYMid meet"
+<svg [attr.viewBox]="layout().viewBox" (pointerdown)="onSvgPointerDown($event)" preserveAspectRatio="xMidYMid meet"
   class="block w-full h-auto border border-gray-300 rounded-lg bg-gray-50">
   <g id="track-layer" pointer-events="none">
     <path [attr.d]="layout().trackPath" fill="none" stroke="black" stroke-width="15" stroke-linecap="round"
