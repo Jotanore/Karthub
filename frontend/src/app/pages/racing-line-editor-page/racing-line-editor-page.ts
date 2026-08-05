@@ -6,6 +6,7 @@ import { ActivatedRoute } from "@angular/router";
 import { CircuitLayoutService } from "../../services/circuit-layout";
 import { CircuitLayout } from "../../models/circuit-layout.model";
 import { SvgEditor } from "../../components/svg-editor/svg-editor";
+import { PointCoordinates } from "../../models/point-coordinates.model";
 
 @Component({
   selector: 'app-racing-line-editor-page',
@@ -34,4 +35,23 @@ export class RacingLineEditorPageComponent {
   toolUpdate(tool: EditorTool): void {
     this.selectedTool.set(tool);
   }
+
+  onPointCreated(coordinates: PointCoordinates): void {
+    const id = crypto.randomUUID();
+    const order = this.points().length + 1;
+    const newPoint: RacingLinePoint = {
+      id: id,
+      order: order,
+      x: coordinates.x,
+      y: coordinates.y
+    };
+
+    this.points.update(points => [...points, newPoint]);
+    this.selectedPointId.set(newPoint.id);
+  }
+
+
+
+
 }
+
