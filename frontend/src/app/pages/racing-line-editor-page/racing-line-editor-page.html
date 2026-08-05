@@ -1,9 +1,9 @@
 <div>
   @if (layout(); as currentLayout) {
-    <app-editor-toolbar [activeTool]="selectedTool()" (toolSelected)="toolUpdate($event)" />
-    <p>Layout: {{ currentLayout.name }}</p>
-
+  <app-editor-toolbar [activeTool]="selectedTool()" (toolSelected)="toolUpdate($event)" />
+  <p>Layout: {{ currentLayout.name }}</p>
+  <app-svg-editor [layout]="currentLayout" />
   } @else {
-    <p>Layout not found</p>
+  <p>Layout not found</p>
   }
 </div>

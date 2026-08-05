@@ -5,10 +5,11 @@ import { EditorToolbar } from '../../components/editor-toolbar/editor-toolbar';
 import { ActivatedRoute } from "@angular/router";
 import { CircuitLayoutService } from "../../services/circuit-layout";
 import { CircuitLayout } from "../../models/circuit-layout.model";
+import { SvgEditor } from "../../components/svg-editor/svg-editor";
 
 @Component({
   selector: 'app-racing-line-editor-page',
-  imports: [EditorToolbar],
+  imports: [EditorToolbar, SvgEditor],
   templateUrl: './racing-line-editor-page.html',
   styleUrl: './racing-line-editor-page.css',
 })
