@@ -1,4 +1,4 @@
-import { Component, input, output } from '@angular/core';
+import { Component, input, output, computed } from '@angular/core';
 import { CircuitLayout } from '../../models/circuit-layout.model';
 import { RacingLinePoint } from '../../models/racing-line-point.model';
 import { EditorTool } from '../../models/editor-tool.model';
@@ -18,6 +18,12 @@ export class SvgEditor {
   readonly selectedPointId = input.required<string | null>();
 
   readonly pointCreated = output<PointCoordinates>();
+
+  readonly polylinePoints = computed(() => {
+    const orderedPoints = [...this.points()].sort((firstPoint, secondPoint) => firstPoint.order - secondPoint.order);
+
+    return orderedPoints.map(point => `${point.x},${point.y}`).join(' ');
+  });
 
   onSvgPointerDown(event: PointerEvent): void {
     if (this.activeTool() !== 'ADD_POINT') {
