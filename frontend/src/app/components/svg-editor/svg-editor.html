@@ -4,4 +4,17 @@
     <path [attr.d]="layout().trackPath" fill="none" stroke="black" stroke-width="15" stroke-linecap="round"
       stroke-linejoin="round" />
   </g>
+  <g id="racing-line-layer" pointer-events="none">
+    @if (points().length >= 2) {
+    <polyline [attr.points]="polylinePoints()" fill="none" stroke="red" stroke-width="6" stroke-linecap="round"
+      stroke-linejoin="round" />
+    }
+  </g>
+  <g id="points-layer">
+    @for (point of points(); track point.id) {
+    <circle [attr.cx]="point.x" [attr.cy]="point.y" [attr.fill]="point.id === selectedPointId() ? 'red' : 'blue'" r="14"
+      (pointerdown)="$event.stopPropagation()" />
+
+    }
+  </g>
 </svg>
