@@ -50,6 +50,11 @@ export class RacingLineEditorPageComponent {
     this.selectedPointId.set(newPoint.id);
   }
 
+  onPointSelected(pointId: string | null): void {
+    this.selectedPointId.set(pointId);
+
+  }
+
 
 
 

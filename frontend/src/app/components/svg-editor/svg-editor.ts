@@ -18,6 +18,7 @@ export class SvgEditor {
   readonly selectedPointId = input.required<string | null>();
 
   readonly pointCreated = output<PointCoordinates>();
+  readonly pointSelected = output<string | null>();
 
   readonly polylinePoints = computed(() => {
     const orderedPoints = [...this.points()].sort((firstPoint, secondPoint) => firstPoint.order - secondPoint.order);
@@ -26,6 +27,12 @@ export class SvgEditor {
   });
 
   onSvgPointerDown(event: PointerEvent): void {
+
+    if (this.activeTool() === 'SELECT') {
+      this.pointSelected.emit(null);
+      return;
+    }
+
     if (this.activeTool() !== 'ADD_POINT') {
       return;
     }
@@ -45,5 +52,16 @@ export class SvgEditor {
     this.pointCreated.emit({ x: transformedPoint.x, y: transformedPoint.y });
 
 
+  }
+
+  onPointPointerDown(event: PointerEvent, pointId: string): void {
+
+    event.stopPropagation();
+
+    if (this.activeTool() !== 'SELECT') {
+      return;
+    }
+
+    this.pointSelected.emit(pointId);
   }
 }

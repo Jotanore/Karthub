@@ -3,7 +3,7 @@
   <app-editor-toolbar [activeTool]="selectedTool()" (toolSelected)="toolUpdate($event)" />
   <p>Layout: {{ currentLayout.name }}</p>
   <app-svg-editor [layout]="currentLayout" [points]="points()" [activeTool]="selectedTool()"
-    [selectedPointId]="selectedPointId()" (pointCreated)="onPointCreated($event)" />
+    [selectedPointId]="selectedPointId()" (pointCreated)="onPointCreated($event)" (pointSelected)="onPointSelected($event)" />
   } @else {
   <p>Layout not found</p>
   }
